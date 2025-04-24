@@ -1,0 +1,17 @@
+<h2><%= @concert.title %></h2>
+
+<p>アーティスト名：<%= @concert.artist %></p>
+<p>ステータス：<%= @concert.status %></p>
+<p>開催日：<%= @concert.date %></p>
+<p>会場名：<%= @concert.venue %></p>
+<p>感想：<%= @concert.memo %></p>
+<p>セットリスト<br><%= @concert.setlist %></p>
+<p>
+  <% if @concert.image.attached? %>
+    <%= image_tag @concert.image, size: "800x500" %>
+  <% end %>
+</p>
+
+<%= link_to "編集", edit_concert_path(@concert), class: "btn btn-secondary" %>
+<%= link_to "削除", concert_path(@concert), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
+<%= link_to "一覧に戻る", concerts_path, class: "btn btn-link" %>

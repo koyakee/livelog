@@ -6,7 +6,7 @@ class CreateConcerts < ActiveRecord::Migration[6.1]
       t.date :date
       t.string :venue
       t.text :memo
-      t.references :user, null: false, foreign_key: true
+      t.integer :user_id
 
       t.timestamps
     end
