@@ -1,3 +1,8 @@
-<h2>ライブ情報編集</h2>
-<%= render "form", concert: @concert %>
-<%= link_to "戻る", concert_path(@concert), class: "btn btn-link" %>
+<div class="section">
+  <h2>ライブ情報編集</h2>
+
+  <%= render "form", concert: @concert %>
+  
+  <%= link_to "戻る", concert_path(@concert), class: "btn-link" %>
+
+</div>

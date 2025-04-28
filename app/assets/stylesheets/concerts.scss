@@ -1,3 +1,110 @@
-// Place all the styles related to the Concerts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.concert-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.concert-list {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.concert-list a {
+  display: inline-block;
+  width: 100%;
+}
+
+.concert-list ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.concert-list li {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.concert-list li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.concert-list li a:hover {
+  text-decoration: underline;
+}
+
+.concert-items {
+  list-style: none;
+  padding: 0;
+}
+
+.concert-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.concert-item a {
+  text-decoration: none;
+  color: #333;
+}
+
+.concert-registration {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 24px;
+}
+
+.concert-detail {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.concert-detail h2 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.concert-detail p {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.concert-list h2 {
+  margin-bottom: 20px;
+}
+
+.concert-info p {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.concert-image img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.btn-group {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-group a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}

@@ -11,34 +11,52 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-container">
-        <%= link_to "Livelog", root_path, class: "nav-brand" %>
-        <nav class="header-nav">
-          <ul class="nav-list">
-            <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to "ライブ一覧", concerts_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "アカウント登録", new_user_registration_path, class: "nav-link" %>
-              </li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <%= yield %>
-  </body>
+    <div class="wrapper">
+      <header>
+        <div class="header-container">
+          <%= link_to "Livelog", root_path, class: "nav-brand" %>
 
+          <button class="hamburger" id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="header-nav" id="header-nav">
+            <ul class="nav-list">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <%= link_to "ライブ一覧", concerts_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "アカウント登録", new_user_registration_path, class: "nav-link" %>
+                </li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <footer>
+        <div class="footer-container">
+          <p>&copy; 2025 Livelog</p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
+

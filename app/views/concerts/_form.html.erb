@@ -1,42 +1,47 @@
-<%= form_with(model: concert, local: true) do |f| %>
-  <div class="form-group">
-    <%= f.label :title, "ライブタイトル/公演名" %>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
+<div class="concert-form">
+  <%= form_with(model: concert, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :title, "ライブタイトル/公演名" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :status, "ステータス" %>
-    <%= f.select :status, options_for_select([['チケット購入済み', 'チケット購入済み'], ['迷い中', '迷い中']], @concert.status), {}, class: "form-control" %>
+    <div class="form-group">
+      <%= f.label :status, "ステータス" %>
+      <%= f.select :status, options_for_select([['チケット購入済み', 'チケット購入済み'], ['迷い中', '迷い中']], @concert.status), {}, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :artist, "アーティスト名" %>
-    <%= f.text_field :artist, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :artist, "アーティスト名" %>
+      <%= f.text_field :artist, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :date, "開催日" %>
-    <%= f.date_field :date, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :date, "開催日" %>
+      <%= f.date_field :date, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :venue, "会場名" %>
-    <%= f.text_field :venue, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :venue, "会場名" %>
+      <%= f.text_field :venue, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :memo, "感想" %>
-    <%= f.text_area :memo, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :memo, "感想" %>
+      <%= f.text_area :memo, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :setlist, "セットリスト" %>
-    <%= f.text_area :setlist, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :setlist, "セットリスト" %>
+      <%= f.text_area :setlist, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :image, "画像アップロード" %>
-    <%= f.file_field :image, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :image, "画像アップロード" %>
+      <%= f.file_field :image, class: "form-control" %>
+    </div>
 
-  <%= f.submit class: "btn btn-primary mt-3" %>
-<% end %>
+    <div class="form-group">
+      <%= f.submit class: "btn-primary" %>
+    </div>
+  <% end %>
+</div>

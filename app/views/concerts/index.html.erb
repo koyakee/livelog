@@ -1,13 +1,17 @@
-<h2>ライブ一覧</h2>
+<div class="concert-list">
+  <h2>ライブ一覧</h2>
 
-<%= link_to "新しいライブを追加", new_concert_path, class: "btn btn-primary mb-3" %>
+  <%= link_to "新しいライブを追加", new_concert_path, class: "btn-primary" %>
 
-<% if @concerts.any? %>
-  <ul>
-    <% @concerts.each do |concert| %>
-      <li><%= link_to concert.title, concert_path(concert) %>（<%= concert.date %>）</li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>まだライブが登録されていません</p>
-<% end %>
+  <% if @concerts.any? %>
+    <ul class="concert-items">
+      <% @concerts.each do |concert| %>
+        <li class="concert-items">
+          <%= link_to "#{concert.title}（#{concert.date.strftime('%Y/%m/%d')}）", concert_path(concert) %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>まだライブが登録されていません</p>
+  <% end %>
+</div>

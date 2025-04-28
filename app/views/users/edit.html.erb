@@ -1,12 +1,15 @@
-<h2>プロフィール編集</h2>
+<main class="section">
+  <h2 class="section-title">ユーザー名編集</h2>
 
-<%= form_with(model: @user, local: true) do |form| %>
-  <div class="form-group">
-    <%= form.label :name, "名前" %>
-    <%= form.text_field :name, class: "form-control" %>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "ユーザー名" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <%= f.submit "更新する", class: "btn-primary" %>
+  <% end %>
+  <div class="links">
+    <%= link_to "マイページに戻る", user_path(@user) %>
   </div>
-
-  <%= form.submit "更新する", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to "マイページに戻る", user_path(@user), class: "btn btn-secondary mt-3" %>
+</main>

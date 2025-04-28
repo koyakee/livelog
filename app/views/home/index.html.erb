@@ -1,8 +1,22 @@
-<main>
-  <div class="main-container">
-    <div class="main-content">
-      <h1>ようこそ、Livelogへ</h1>
-      <p>あなたの音楽体験を記録しよう</p>
-    </div>
+<div class="main-container">
+  <div class="main-content">
+    <h1 class="title">ようこそ、Livelogへ</h1>
+    <p class="caption">あなたの音楽体験を記録しよう</p>
   </div>
-</main>
+
+  <section class="about">
+    <h2>「Livelog」とは？</h2>
+    <p>音楽ライブの予定と記録を<br>写真や感想と一緒に残せるアプリです</p>
+  </section>
+
+  <% if user_signed_in? %>
+    <section class="recent-concerts">
+      <h2>あなたの最近のライブ記録</h2>
+      <ul>
+        <% current_user.concerts.order(created_at: :desc).limit(3).each do |concert| %>
+          <li><%= link_to concert.title, concert_path(concert) %>（<%= concert.date.strftime("%Y/%m/%d") %>）</li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+</div>
