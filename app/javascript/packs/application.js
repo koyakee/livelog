@@ -4,10 +4,21 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
+// import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
+
+window.Rails = Rails;
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger-btn");
+  const nav = document.getElementById("header-nav");
+
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("open");
+  });
+});

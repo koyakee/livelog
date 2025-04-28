@@ -1,0 +1,15 @@
+<main class="section">
+  <h2 class="section-title">マイページ</h2>
+
+  <div class="user-info">
+    <ul>
+      <li>ユーザー名：<%= current_user.name %></li>
+      <li>メールアドレス：<%= current_user.email %></li>
+    </ul>
+  </div>
+
+  <div class="profile-actions">
+    <%= link_to "ユーザー名を編集", edit_user_path(current_user), class: "btn-primary" %>
+    <%= link_to "アカウント情報を編集", edit_user_registration_path, class: "btn-secondary" %>
+  </div>
+</main>
