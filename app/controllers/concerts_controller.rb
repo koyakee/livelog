@@ -1,21 +1,20 @@
 class ConcertsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_concert, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
   
   def index
     @concerts = current_user.concerts.order(date: :asc)
   end
   
-  def show
-  end
+  def show; end
   
   def new
-    @concert = current_user.concerts.build
+    @concert = current_user.concerts.new
   end
   
   def create
-    @concert = current_user.concerts.build(concert_params)
+    @concert = current_user.concerts.new(concert_params)
     if @concert.save
       redirect_to @concert, notice: "ライブ情報を登録しました"
     else
@@ -23,8 +22,7 @@ class ConcertsController < ApplicationController
     end
   end
   
-  def edit
-  end
+  def edit; end
   
   def update
     if @concert.update(concert_params)
@@ -44,8 +42,8 @@ class ConcertsController < ApplicationController
   def set_concert
     @concert = Concert.find(params[:id])
   end
-
-  def correct_user
+  
+  def authorize_user
     redirect_to concerts_path, alert: "権限がありません" unless @concert.user == current_user
   end
   
