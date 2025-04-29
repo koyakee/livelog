@@ -117,6 +117,10 @@ GEM
     devise-i18n (1.13.0)
       devise (>= 4.9.0)
       rails-i18n
+    dotenv (3.1.8)
+    dotenv-rails (3.1.8)
+      dotenv (= 3.1.8)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.1)
     ffi (1.17.2-arm64-darwin)
@@ -304,6 +308,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   devise-i18n
+  dotenv-rails
   importmap-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -314,7 +319,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring (= 4.2.1)
-  sqlite3 (~> 1.4)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
