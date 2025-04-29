@@ -1,24 +1,27 @@
-# README
+# Livelog
+Livelogは、音楽ライブの参戦予定と参戦記録を管理するためのシンプルなアプリケーションです。  
+ユーザーは、これまで参戦したライブ情報を記録し、未来のライブ参戦予定も管理できます。  
+また、ライブの感想やセットリスト、画像などを追加することで、ライブ体験を振り返りやすくなります。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 工夫ポイント
+・画面サイズに応じて表示が自動で調整されるため、どのデバイスでも快適に使用可能です。  
+・ライブ記録に画像やセットリストを追加できることで、ライブの記録をより詳細に振り返ることができます。  
+・ユーザー認証はDeviseを使用し、個人情報の保護やアクセス制限を適切に行っています。
 
-Things you may want to cover:
+## 機能一覧
+1.ユーザー認証(Devise)  
+・サインアップ、ログイン、ログアウト機能  
+・ユーザー情報（名前、メールアドレス）の編集  
+2.ライブ情報管理  
+・ライブの参戦予定情報を登録  
+・参戦済みライブ情報を記録（感想、セットリスト、画像など）  
+3.ライブ詳細ページ  
+・ライブの詳細情報（タイトル、アーティスト、会場、日付、感想など）を表示  
+4.画像のアップロード(ActiveStorage)  
+・参戦したライブの記録として、画像を添付できる  
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 使用技術
+・Ruby 3.1.4  
+・Ruby on Rails 6.1.7.10     
+・Render  
+・PostgreSQL  
