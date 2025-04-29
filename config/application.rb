@@ -20,5 +20,6 @@ module Livelog
     # config.eager_load_paths << Rails.root.join("extras")
     
     config.i18n.default_locale = :ja
+    
   end
 end
