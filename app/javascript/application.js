@@ -1,5 +1,6 @@
+import "@hotwired/turbo-rails"
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("turbo:load", function () {
   const hamburger = document.getElementById("hamburger-btn");
   const nav = document.getElementById("header-nav");
 
