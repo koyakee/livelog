@@ -59,4 +59,4 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'active_storage_validations'
-
+gem 'pg'
